@@ -1,5 +1,6 @@
 # Use the official OpenJDK 21 image as the base image
-FROM eclipse-temurin:21-jre-jammy
+FROM eclipse-temurin:21-jdk-jammy
+
 
 
 # Set the working directory inside the container
