@@ -37,6 +37,10 @@ jobs:
     - name: Build Docker image
       run: |
         docker build -t kowshikpalivela/cicd-setup:latest .
+    - name: Check Docker secrets
+      run: |
+        echo "USERNAME_PRESENT=${{ secrets.DOCKERHUB_USERNAME != '' }}"
+        echo "TOKEN_PRESENT=${{ secrets.DOCKERHUB_TOKEN != '' }}"
 
     - name: Login to Docker Hub
       if: github.ref == 'refs/heads/main' && github.event_name == 'push'
